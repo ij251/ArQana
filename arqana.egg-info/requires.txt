@@ -1,4 +1,0 @@
-qiskit
-
-[dev]
-pytest
