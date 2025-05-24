@@ -23,7 +23,7 @@ def deutsch_jozsa_circuit(n_input: int, oracle: Callable[[QuantumCircuit, int], 
         qc.h(q)
 
     #Apply oracle to the circuit
-        qc = oracle(qc)
+    qc = oracle(qc, n_qubits)
     
     #apply hadamard to input register
     for q in range(n_qubits-1):
