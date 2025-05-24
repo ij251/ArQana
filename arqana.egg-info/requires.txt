@@ -1,0 +1,4 @@
+qiskit
+
+[dev]
+pytest

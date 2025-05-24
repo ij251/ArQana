@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "arqana"
 version = "0.1.0"
 description = "Modular quantum algorithm library"
-authors = [{ name="Your Name", email="you@example.com" }]
+authors = [{ name="Isha Janbakhsh", email="isha.j@hotmail.com" }]
 dependencies = [
     "qiskit",
 ]
