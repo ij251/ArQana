@@ -2,7 +2,7 @@
 from qiskit import QuantumCircuit
 from typing import Callable
 
-def deutsch_jozsa_circuit(n_input: int, oracle: Callable[[QuantumCircuit, int], QuantumCircuit]) -> QuantumCircuit:
+def deutsch_jozsa_circuit(n_input: int, oracle: Callable[[QuantumCircuit], None]) -> QuantumCircuit:
     '''Creates a general Deutsch-Jozsa style circuit with general oracle
 
     :param oracle: A callable function object that modifies a quantum circuit, adding an oracle.
@@ -23,7 +23,7 @@ def deutsch_jozsa_circuit(n_input: int, oracle: Callable[[QuantumCircuit, int], 
         qc.h(q)
 
     #Apply oracle to the circuit
-    qc = oracle(qc, n_qubits)
+    oracle(qc)
     
     #apply hadamard to input register
     for q in range(n_qubits-1):
