@@ -1,5 +1,5 @@
 from ..circuits.oracles import oracle_constant, oracle_balanced
-from ..circuits.deutsch_josza_circuit import deutsch_jozsa_circuit
+from ..circuits.deutsch_jozsa_circuit import deutsch_jozsa_circuit
 from qiskit import QuantumCircuit
 
 def deutsch_jozsa_algorithm(n_input: int, oracle_type: str = "balanced") -> QuantumCircuit:
@@ -12,9 +12,9 @@ def deutsch_jozsa_algorithm(n_input: int, oracle_type: str = "balanced") -> Quan
     '''
 
     #Apply oracle to the circuit
-    if oracle_type == "balanced":
+    if oracle_type.lower() == "balanced":
         return deutsch_jozsa_circuit(n_input, oracle_balanced)
-    elif oracle_type == "constant":
+    elif oracle_type.lower() == "constant":
         return deutsch_jozsa_circuit(n_input, oracle_constant)
     else:
         raise ValueError("Oracle type must be constant or balanced.")
