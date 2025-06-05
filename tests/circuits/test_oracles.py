@@ -9,7 +9,7 @@ def test_balanced_oracle():
 
 def test_constant_oracle():
     qc = QuantumCircuit(3)
-    qc2 = qc
+    qc2 = qc.copy()
     oracle_constant(qc)
     assert isinstance(qc, QuantumCircuit)
     assert qc == qc2
